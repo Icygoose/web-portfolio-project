@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Development Best Practices Checker</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>Web Development Best Practices</h1>
+            <ul>
+                <li><a href="index.html" class="active">Best Practices Checker</a></li>
+                <li><a href="cv.html">My CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="summary-section">
+            <div class="progress-container">
+                <h2>Your Progress</h2>
+                <div class="progress-details">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-text" id="progress-text">0/15 Best Practices Met</div>
+                </div>
+            </div>
+            <div id="reward-container" class="hidden">
+                <h3>Congratulations! Here's a cute animal:</h3>
+                <div id="animal-image-container">
+                    <img id="animal-image" src="" alt="Cute animal">
+                    <p id="animal-caption"></p>
+                </div>
+                <button id="new-animal-btn">Get Another Cute Animal</button>
+            </div>
+        </section>
+
+        <section id="checklist-section">
+            <h2>Web Development Best Practices Checklist</h2>
+            <p>Check off the best practices that you follow in your projects:</p>
+            
+            <div class="best-practices-container">
+                <h3>HTML Best Practices</h3>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="html1" class="practice-checkbox">
+                    <label for="html1">Use semantic HTML elements</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Use elements like &lt;header&gt;, &lt;nav&gt;, &lt;main&gt;, &lt;section&gt;, &lt;article&gt;, &lt;footer&gt; instead of generic &lt;div&gt; elements.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="html2" class="practice-checkbox">
+                    <label for="html2">Include proper document structure</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Always include &lt;!DOCTYPE html&gt;, &lt;html&gt;, &lt;head&gt;, and &lt;body&gt; tags in the correct order.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="html3" class="practice-checkbox">
+                    <label for="html3">Ensure good accessibility with ARIA attributes</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Use ARIA labels, roles, and attributes to make your site accessible to screen readers and assistive technologies.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="html4" class="practice-checkbox">
+                    <label for="html4">Use proper alt text for images</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Always include descriptive alt text for images to improve accessibility and SEO.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="html5" class="practice-checkbox">
+                    <label for="html5">Validate HTML with W3C validator</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Regularly check your HTML code with the W3C validator to ensure it follows standards.</span>
+                    </div>
+                </div>
+                
+                <h3>CSS Best Practices</h3>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="css1" class="practice-checkbox">
+                    <label for="css1">Use external CSS files</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Place CSS in external files rather than inline styles or style tags for better maintainability.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="css2" class="practice-checkbox">
+                    <label for="css2">Implement responsive design</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Use media queries and flexible layouts to ensure your site works well on devices of all sizes.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="css3" class="practice-checkbox">
+                    <label for="css3">Follow a consistent naming convention</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Use a consistent method like BEM (Block Element Modifier) for naming CSS classes.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="css4" class="practice-checkbox">
+                    <label for="css4">Use CSS variables for consistent styling</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Implement CSS custom properties (variables) for colors, fonts, and other reusable values.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="css5" class="practice-checkbox">
+                    <label for="css5">Optimize CSS for performance</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Minimize CSS, reduce specificity where possible, and avoid excessive use of @import.</span>
+                    </div>
+                </div>
+                
+                <h3>JavaScript Best Practices</h3>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="js1" class="practice-checkbox">
+                    <label for="js1">Use ES6+ features</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Leverage modern JS features like arrow functions, destructuring, template literals, and async/await.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="js2" class="practice-checkbox">
+                    <label for="js2">Implement proper error handling</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Use try/catch blocks around code that might fail, especially with asynchronous operations.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="js3" class="practice-checkbox">
+                    <label for="js3">Avoid global variables</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Encapsulate code in modules, functions, or objects to prevent polluting the global namespace.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="js4" class="practice-checkbox">
+                    <label for="js4">Comment your code appropriately</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Add meaningful comments to explain complex logic, but don't comment obvious code.</span>
+                    </div>
+                </div>
+                <div class="best-practice-item">
+                    <input type="checkbox" id="js5" class="practice-checkbox">
+                    <label for="js5">Use event delegation for efficient event handling</label>
+                    <div class="explanation">
+                        <i class="fas fa-info-circle"></i>
+                        <span class="explanation-text">Attach event listeners to parent elements rather than individual children for better performance.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Web Development Best Practices Checker</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
