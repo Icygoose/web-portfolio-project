@@ -11,6 +11,7 @@ let rewardContainer;
 let animalImage;
 let animalCaption;
 let newAnimalBtn;
+let themeToggleBtn;
 
 // Constants
 const THRESHOLD_PERCENTAGE = 80; // 80% of checkboxes need to be checked to show reward
@@ -55,6 +56,9 @@ const ANIMAL_APIS = [
 
 // Main initialization when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize theme toggle for all pages
+    initThemeToggle();
+    
     // Initialize page based on current URL
     const currentPage = window.location.pathname;
     
@@ -64,6 +68,33 @@ document.addEventListener('DOMContentLoaded', () => {
         initCVPage();
     }
 });
+
+/**
+ * Initialize theme toggle functionality for all pages
+ */
+function initThemeToggle() {
+    themeToggleBtn = document.getElementById('change-theme-btn');
+    
+    if (themeToggleBtn) {
+        // Check if dark theme is saved in localStorage
+        const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
+        if (isDarkTheme) {
+            document.body.classList.add('dark-theme');
+            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+        
+        themeToggleBtn.addEventListener('click', () => {
+            document.body.classList.toggle('dark-theme');
+            const isDark = document.body.classList.contains('dark-theme');
+            localStorage.setItem('darkTheme', isDark);
+            
+            // Change icon based on theme
+            themeToggleBtn.innerHTML = isDark ? 
+                '<i class="fas fa-sun"></i>' : 
+                '<i class="fas fa-moon"></i>';
+        });
+    }
+}
 
 /**
  * Initialize the Best Practices Page
@@ -107,7 +138,6 @@ function initBestPracticesPage() {
  */
 function initCVPage() {
     // Get DOM elements
-    const themeToggleBtn = document.getElementById('change-theme-btn');
     const skillLevels = document.querySelectorAll('.skill-level');
     const submitFormBtn = document.getElementById('submit-form');
     const formStatus = document.getElementById('form-status');
@@ -125,27 +155,6 @@ function initCVPage() {
             }, 100);
         });
     }, 500);
-    
-    // Theme toggle functionality
-    if (themeToggleBtn) {
-        // Check if dark theme is saved in localStorage
-        const isDarkTheme = localStorage.getItem('darkTheme') === 'true';
-        if (isDarkTheme) {
-            document.body.classList.add('dark-theme');
-            themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        themeToggleBtn.addEventListener('click', () => {
-            document.body.classList.toggle('dark-theme');
-            const isDark = document.body.classList.contains('dark-theme');
-            localStorage.setItem('darkTheme', isDark);
-            
-            // Change icon based on theme
-            themeToggleBtn.innerHTML = isDark ? 
-                '<i class="fas fa-sun"></i>' : 
-                '<i class="fas fa-moon"></i>';
-        });
-    }
     
     // Form submission handler (simulated)
     if (submitFormBtn && formStatus) {
