@@ -47,16 +47,17 @@ The project was developed as part of the CITS5505 Web Development course at the 
 
 ## Project Structure
 ```
-IndividualProject/
-├── css/
-│   └── styles.css         # Main stylesheet
-├── js/
-│   └── script.js          # Main JavaScript file
-├── image/
-│   └── PHOTO.JPG          # Profile picture
-├── index.html             # Best Practices Checker page
-├── cv.html                # CV/Resume page
-└── README.md              # Project documentation
+CITS5505_WEBDEV/
+├── README.md                        # Project documentation
+└── IndividualProject/
+    ├── css/
+    │   └── styles.css              # Custom styles for layout and theme
+    ├── js/
+    │   └── script.js               # JavaScript for interactivity and AJAX features
+    ├── image/
+    │   └── PHOTO.JPG               # Profile picture used on CV page
+    ├── index.html                  # Best Practices Checker page
+    ├── cv.html                     # Personal CV page
 ```
 
 ## Usage
