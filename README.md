@@ -5,7 +5,7 @@ This is a personal portfolio website with two main components:
 1. A Web Development Best Practices Checker
 2. A professional CV/Resume page
 
-The project was developed as part of the CITS5505 Web Development course at the University of Western Australia.
+The project was developed as part of the CITS5505 Agile Web Development course at the University of Western Australia.
 
 ## Features
 
@@ -47,7 +47,7 @@ The project was developed as part of the CITS5505 Web Development course at the 
 
 ## Project Structure
 ```
-CITS5505_WEBDEV/
+web-portfolio-project/
 ├── README.md                        # Project documentation
 └── IndividualProject/
     ├── css/
